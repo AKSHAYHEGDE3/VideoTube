@@ -11,7 +11,7 @@ function App() {
         <Navbar />
         <div style={{ display: 'flex' }}>
           <SideBar />
-          <div>
+          <div style={{width:"calc(100vw - 200px)"}}>
             <Routes>
               <Route path="/">
                 <Route index element={<Home />} />
