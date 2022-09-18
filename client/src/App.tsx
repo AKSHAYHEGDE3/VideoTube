@@ -10,8 +10,8 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <div style={{ display: 'flex' }}>
-          <SideBar />
-          <div style={{width:"calc(100vw - 200px)"}}>
+          <SideBar/>
+          <div style={{flex:11}}>
             <Routes>
               <Route path="/">
                 <Route index element={<Home />} />
