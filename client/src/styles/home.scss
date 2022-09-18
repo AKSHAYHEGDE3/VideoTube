@@ -1,0 +1,8 @@
+.homePage{
+    background-color: black;
+    height: calc(100vh - 60px - 40px);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 22px 2%;
+}
