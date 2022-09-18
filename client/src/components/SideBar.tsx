@@ -24,6 +24,18 @@ const SideBar = () => {
             <hr />
             <div className="subscriptions">
                 <p>SUBSCRIPTIONS</p>
+                <div className='menu'>
+                    <img className='avatar' src="https://images5.alphacoders.com/644/thumbbig-644177.webp" alt="" />
+                    <p>Home</p>
+                </div>
+                <div className='menu'>
+                    <img className='avatar' src="https://images5.alphacoders.com/644/thumbbig-644177.webp" alt="" />
+                    <p>Home</p>
+                </div>
+                <div className='menu'>
+                    <img className='avatar' src="https://images5.alphacoders.com/644/thumbbig-644177.webp" alt="" />
+                    <p>Home</p>
+                </div>
             </div>
         </div>
     )
