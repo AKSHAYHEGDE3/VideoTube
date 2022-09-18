@@ -1,6 +1,6 @@
 .card{
-    width: 22%;
-    padding: 1%;
+    width: 23%;
+    padding: 0.5%;
     // height: 200px;
 
     img{
@@ -38,4 +38,8 @@
         }
     }
 
+}
+
+.card:hover{
+    transform: scale(1.1);
 }
