@@ -1,8 +1,15 @@
 .homePage{
     background-color: black;
-    height: calc(100vh - 60px - 40px);
+    height:100vh;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 22px 2%;
+    overflow: scroll;
+ 
 }
+
+
+::-webkit-scrollbar{
+    display: none;
+    }

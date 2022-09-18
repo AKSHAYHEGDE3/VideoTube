@@ -1,18 +1,23 @@
 .sidebar{
-    height: calc(100vh - 60px - 25px);
-    width: 200px;
+    height: 100vh;
+    flex: 2;
     background-color: #181818;
     color: white;
     padding: 12.5px 0;
+    overflow: scroll;
 
     .menu{
         display: flex;
         align-items: center;
-        padding: 1% 5% 1% 10%;
+        padding: 0.5% 5% 0.5% 10%;
         p{
             font-weight: bold;
             margin-left: 10%;
         }
+    }
+
+    .menu:hover{
+       background-color: #333;
     }
 
     .subscriptions{
