@@ -36,10 +36,24 @@
             font-size: 0.8rem;
             opacity: 0.7;
         }
+
     }
 
-}
+    .timeTag{
+        border-radius: 5px;
+        width: 15%;
+        height: 20px;
+        color: white;
+        background-color: black;
+        position: relative;
+        bottom: 27px;
+        left: 84%;
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: center;
+    }
 
-.card:hover{
-    transform: scale(1.1);
+    &:hover{
+        transform: scale(1.1);
+    }
 }
