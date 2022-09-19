@@ -8,6 +8,7 @@ const VideoPage = () => {
     <div className='videpPg'>
       <div>
         <video className="video" controls src='' />
+       \
         <div className='info'>
           <p className="title">Tarak mehta ka oolta chasma </p>
           <p style={{marginTop:'2%'}}>

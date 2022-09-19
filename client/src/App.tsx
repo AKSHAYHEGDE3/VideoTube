@@ -28,11 +28,11 @@ function App() {
               {
               flex: 12,
               borderTop: '0.5px solid lightgray',
-              overflowY:'scroll',
+              overflow:'scroll',
               backgroundColor: "black"
             }:{
               borderTop: '0.5px solid lightgray',
-              overflowY:'scroll',
+              overflow:'scroll',
               backgroundColor: "black"
             }
             }>
