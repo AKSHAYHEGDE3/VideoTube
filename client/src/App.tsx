@@ -28,12 +28,14 @@ function App() {
               {
               flex: 12,
               borderTop: '0.5px solid lightgray',
-              overflowY:'scroll',
-              backgroundColor: "black"
+              overflow:'scroll',
+              backgroundColor: "black",
+              height:"calc(100vh - 60px)"
             }:{
               borderTop: '0.5px solid lightgray',
-              overflowY:'scroll',
-              backgroundColor: "black"
+              overflow:'scroll',
+              backgroundColor: "black",
+              height:"calc(100vh - 60px)"
             }
             }>
               <Routes>
