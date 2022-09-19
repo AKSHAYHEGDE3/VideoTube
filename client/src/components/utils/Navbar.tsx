@@ -1,8 +1,8 @@
 import React,{useContext} from 'react'
-import '../styles/navbar.scss'
+import '../../styles/navbar.scss'
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
-import { SideBarContext } from '../SideBarContext';
+import { SideBarContext } from '../../SideBarContext';
 
 const Navbar = () => {
 

@@ -1,8 +1,7 @@
 import React from 'react'
-import VideoCard from '../components/VideoCard'
+import VideoCard from '../components/Home/VideoCard'
 import '../styles/home.scss'
 
-// https://images5.alphacoders.com/644/thumbbig-644177.webp
 const Home = () => {
   return (
     <div>

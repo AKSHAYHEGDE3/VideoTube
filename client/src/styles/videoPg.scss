@@ -1,0 +1,45 @@
+.videpPg{
+    padding: 2% 5%;
+    // height:100vh;
+    display: flex;
+    overflow-y: scroll;
+
+    div:first-child{
+        width: 70%;
+
+        .info{
+            color: white;
+
+            .title{
+                font-size: 1.1rem;
+                font-weight: bold;
+            }
+
+            .views{
+                font-weight: bold;
+                span{
+                    margin-left: 5%;
+                }
+            }
+
+            div{
+                display: flex;
+                align-items: center;
+
+                div{
+                    background-color: #303030;
+                    display:flex;
+                    width: auto;
+                    align-items: center;
+                    padding: 1%;
+                }
+            }
+            
+        }
+    }
+
+    .video{
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+}

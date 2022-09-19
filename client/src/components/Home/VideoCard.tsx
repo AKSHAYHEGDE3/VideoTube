@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/videoCard.scss'
+import '../../styles/videoCard.scss'
 
 const VideoCard = () => {
   return (

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from './components/Navbar';
-import SideBar from './components/SideBar';
+import Navbar from './components/utils/Navbar';
+import SideBar from './components/utils/SideBar';
 import Home from './pages/Home';
+import VideoPage from './pages/VideoPage';
 import { SideBarContext, SideBarContextInterface } from './SideBarContext';
 
 function App() {
@@ -26,14 +27,19 @@ function App() {
               showSideBar?
               {
               flex: 12,
-              borderTop: '0.5px solid lightgray'
+              borderTop: '0.5px solid lightgray',
+              overflowY:'scroll',
+              backgroundColor: "black"
             }:{
-              borderTop: '0.5px solid lightgray'
+              borderTop: '0.5px solid lightgray',
+              overflowY:'scroll',
+              backgroundColor: "black"
             }
             }>
               <Routes>
                 <Route path="/">
                   <Route index element={<Home />} />
+                  <Route path=":id" element={<VideoPage />} />
                 </Route>
               </Routes>
             </div>
