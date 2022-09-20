@@ -1,17 +1,19 @@
 import React from 'react'
 import VideoCard from '../components/Home/VideoCard'
 import '../styles/home.scss'
+import { videoInterface } from '../typeUtils'
 
-interface VideoProps{
-  videos:Array<object>
+interface vids{
+  videos:videoInterface[]
 }
 
-const Home = ({videos}:VideoProps) => {
+
+const Home = ({videos}:vids) => {
 
   return (
     <div>
         <div className='homePage'>
-          {videos.map((v:any)=><VideoCard title={v.snippet.title} avatar="" image={v.snippet.thumbnails.high.url} key={v.id.videoId} id={v.id.videoId}/>)}
+          {videos.map((v:videoInterface)=><VideoCard title={v.videoTitle} channelTitle={v.channelTitle} image={v.image} key={v.videoId} id={v.videoId}/>)}
         </div>
     </div>
   )

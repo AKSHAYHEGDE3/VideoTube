@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router-dom'
 interface VideoCardProps{
   title:string,
   image:string,
-  avatar:string,
   id:string
+  channelTitle:string
 }
 
-const VideoCard = ({title,id,image,avatar}:VideoCardProps) => {
+const VideoCard = ({title,id,image,channelTitle}:VideoCardProps) => {
 
 const navigate = useNavigate()
   const goToVideo=()=>{
@@ -23,10 +23,10 @@ const navigate = useNavigate()
         18:30
       </div>
       <div className='info'>
-        <img className='avatar' src={avatar} alt="" />
+        <img className='avatar' src={image} alt="" />
         <div>
-          <p>{title}</p>
-          <p>name . 2.2M views . 15 hours ago</p>
+          <p>{title.length > 40 ? title.slice(0,40)+'...' : title}</p>
+          <p>{channelTitle}<br /> 2.2M views . 15 hours ago</p>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ import { SideBarContext } from '../../SideBarContext';
 const Navbar = () => {
 
   const sideBar = useContext(SideBarContext)
-  console.log(sideBar?.showSideBar);
+
 
   return (
     <div style={{
