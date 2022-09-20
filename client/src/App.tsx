@@ -7,6 +7,7 @@ import VideoPage from './pages/VideoPage';
 import { SideBarContext, SideBarContextInterface } from './SideBarContext';
 import axios from "./api/Youtube"
 import { videoInterface } from './typeUtils'
+import SignIn from './components/SignIn';
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
       <SideBarContext.Provider value={side}>
         <BrowserRouter>
           <Navbar />
+          {/* <SignIn /> */}
           <div style={{ display: 'flex' }}>
             <div style={showSideBar ? { width: '200px' } : { display: 'none' }}>
               <SideBar />
