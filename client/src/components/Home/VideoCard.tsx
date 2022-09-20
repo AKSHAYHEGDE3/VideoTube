@@ -1,17 +1,25 @@
 import React from 'react'
 import '../../styles/videoCard.scss'
+import { useNavigate } from 'react-router-dom'
 
-const VideoCard = () => {
+
+const VideoCard = (props:any) => {
+
+const navigate = useNavigate()
+  const goToVideo=()=>{
+    navigate(`/${props.id}`,{state:{title:props.title,image:props.image}})
+  }
+ 
   return (
-    <div className='card'>
-      <img src="https://images5.alphacoders.com/644/thumbbig-644177.webp" alt="" />
+    <div className='card' onClick={()=>goToVideo()}>
+      <img src={props.image} alt="" />
       <div className='timeTag'>
         18:30
       </div>
       <div className='info'>
-        <img className='avatar' src="https://images5.alphacoders.com/644/thumbbig-644177.webp" alt="" />
+        <img className='avatar' src={props.avatar} alt="" />
         <div>
-          <p>Tarak mehta ka oolta chasma</p>
+          <p>{props.title}</p>
           <p>name . 2.2M views . 15 hours ago</p>
         </div>
       </div>

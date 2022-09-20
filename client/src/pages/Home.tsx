@@ -2,46 +2,12 @@ import React from 'react'
 import VideoCard from '../components/Home/VideoCard'
 import '../styles/home.scss'
 
-const Home = () => {
+const Home = (props:any) => {
+
   return (
     <div>
         <div className='homePage'>
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
-          <VideoCard />
+          {props.videos.map((v:any)=><VideoCard title={v.snippet.title} image={v.snippet.thumbnails.high.url} key={v.id.videoId} id={v.id.videoId}/>)}
         </div>
     </div>
   )
