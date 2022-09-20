@@ -2,12 +2,16 @@ import React from 'react'
 import VideoCard from '../components/Home/VideoCard'
 import '../styles/home.scss'
 
-const Home = (props:any) => {
+interface VideoProps{
+  videos:Array<object>
+}
+
+const Home = ({videos}:VideoProps) => {
 
   return (
     <div>
         <div className='homePage'>
-          {props.videos.map((v:any)=><VideoCard title={v.snippet.title} image={v.snippet.thumbnails.high.url} key={v.id.videoId} id={v.id.videoId}/>)}
+          {videos.map((v:any)=><VideoCard title={v.snippet.title} avatar="" image={v.snippet.thumbnails.high.url} key={v.id.videoId} id={v.id.videoId}/>)}
         </div>
     </div>
   )
