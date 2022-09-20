@@ -4,7 +4,7 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import { useLocation, useNavigation, useParams } from 'react-router-dom';
 import { TextField } from '@mui/material';
-
+import ReactPlayer from 'react-player/youtube';
 const VideoPage = () => {
 
   const id = useLocation().pathname.split('/')[1]
@@ -15,8 +15,9 @@ const VideoPage = () => {
   return (
     <div className='videpPg'>
       <div>
-        <video className="video" controls={true} src={`https://www.youtube.com/watch?v=${id}`} />
-       
+      <iframe  src={`https://www.youtube.com/embed/${id}`} className="video" title="YouTube video player"   allowFullScreen></iframe>
+      
+        {/* <ReactPlayer  url={`https://www.youtube.com/watch?v=${id}`}/> */}
         <div className='info'>
           <p className="title">{location.state.title} </p>
           <p style={{ marginTop: '2%' }}>

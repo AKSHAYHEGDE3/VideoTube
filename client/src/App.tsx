@@ -10,7 +10,7 @@ import axios from "./api/Youtube"
 function App() {
 
   const [showSideBar, setShowSideBar] = useState<boolean>(true)
-  const [videos,setVideos] = useState<object>([]);
+  const [videos,setVideos] = useState<Array<object>>([]);
   const side: SideBarContextInterface = {
     showSideBar: showSideBar,
     setShowSideBar: setShowSideBar
