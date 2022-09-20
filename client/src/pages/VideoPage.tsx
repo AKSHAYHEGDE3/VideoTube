@@ -3,6 +3,7 @@ import "../styles/videoPg.scss"
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import { useLocation, useNavigation, useParams } from 'react-router-dom';
+import { TextField } from '@mui/material';
 
 const VideoPage = () => {
 
@@ -36,15 +37,28 @@ const VideoPage = () => {
           </div>
         </div>
         <div className='channelInfo'>
-            <img className='avatar' src="https://images5.alphacoders.com/644/thumbbig-644177.webp" alt="" />
-            <div>
-              <p className='name'>Name</p>
-              <span>771 subscribers</span>
-            </div>
-            <div className="subscribe">
-              SUBSCRIBE
-            </div>
+          <img className='avatar' src="https://images5.alphacoders.com/644/thumbbig-644177.webp" alt="" />
+          <div>
+            <p className='name'>Name</p>
+            <span>771 subscribers</span>
           </div>
+          <div className="subscribe">
+            SUBSCRIBE
+          </div>
+        </div>
+        <div className='comments'>
+          <p>0 Comments</p>
+          <div className='inputDiv'>
+            <img className='avatar' src="https://images5.alphacoders.com/644/thumbbig-644177.webp" alt="" />
+            <TextField
+             className='textField'
+              id="standard-multiline-flexible"
+              placeholder='Add a comment' 
+              multiline
+              maxRows={4}
+              variant="standard" />
+          </div>
+        </div>
       </div>
       <div className='suggestions'>
 
