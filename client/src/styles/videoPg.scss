@@ -4,6 +4,13 @@
     display: flex;
     overflow-y: scroll;
 
+    .avatar {
+        border-radius: 50%;
+        height: 36px;
+        width: 36px;
+        object-fit: cover;
+    }
+
     div:first-child {
         width: 70%;
 
@@ -64,22 +71,16 @@
             align-items: center;
             color: white;
 
-            .avatar {
-                border-radius: 50%;
-                height: 36px;
-                width: 36px;
-                object-fit: cover;
-            }
-
-            div{
+            div {
                 margin: 0 4%;
+
                 .name {
                     font-weight: bold;
                     margin: 0;
                 }
             }
 
-            .subscribe{
+            .subscribe {
                 background-color: red;
                 display: flex;
                 align-items: center;
@@ -90,8 +91,33 @@
                 margin-left: auto;
                 margin-right: 0;
             }
-            
+
         }
+
+        .comments {
+            color: white;
+
+            .inputDiv {
+                display: flex;
+                align-items: center;
+
+                .textField {
+                    margin-left: 4%;
+                    width: 90%;
+
+
+                    .css-8q2m5j-MuiInputBase-root-MuiInput-root:before ,
+                    .css-8q2m5j-MuiInputBase-root-MuiInput-root:after {
+                        border-bottom: 1px solid white;
+                    }
+
+                    .css-8q2m5j-MuiInputBase-root-MuiInput-root{
+                        color: white;
+                    }
+                }
+            }
+        }
+
     }
 
     .video {
