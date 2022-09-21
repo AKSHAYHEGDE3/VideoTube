@@ -45,7 +45,7 @@ function App() {
       <SideBarContext.Provider value={side}>
         <BrowserRouter>
           <Navbar />
-          {/* <SignIn /> */}
+          <SignIn />
           <div style={{ display: 'flex' }}>
             <div style={showSideBar ? { width: '200px' } : { display: 'none' }}>
               <SideBar />

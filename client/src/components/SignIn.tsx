@@ -3,6 +3,9 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import '../styles/auth.scss'
+import { useDispatch, useSelector } from 'react-redux';
+import { signInModalState } from '../store/reducers/auth';
+import { RootState } from '../store';
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -18,14 +21,15 @@ const style = {
 
 const SignIn = () => {
 
-
+    const dispatch = useDispatch()
+    const signInModal = useSelector((state:RootState)=>state.auth.signInModal)
 
     const handleClose = () => {
-        return 
+        dispatch(signInModalState(false))
     }
     return (
         <Modal
-            open={true}
+            open={signInModal}
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"

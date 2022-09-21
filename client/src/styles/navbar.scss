@@ -71,3 +71,17 @@
         }
     }
 }
+
+.signInBtn{
+    color: lightblue;
+    background-color: transparent;
+    border: 1px solid lightblue;
+    display: flex;
+    align-items: center;
+    padding: 0 2%;
+    cursor: pointer;
+
+    p{
+        margin-left: 5px;
+    }
+}

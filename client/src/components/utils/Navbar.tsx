@@ -3,10 +3,16 @@ import '../../styles/navbar.scss'
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import { SideBarContext } from '../../SideBarContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store';
+import { signInModalState } from '../../store/reducers/auth';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Navbar = () => {
 
   const sideBar = useContext(SideBarContext)
+  const signInModal = useSelector((state:RootState)=>state.auth.signInModal)
+  const dispatch = useDispatch()
 
 
   return (
@@ -25,9 +31,13 @@ const Navbar = () => {
           <SearchIcon />
         </div>
       </div>
-      <div className='profile'>
+      <button onClick={()=>dispatch(signInModalState(true))} className='signInBtn'>
+        <AccountCircleIcon /> 
+        <p>Sign In</p>
+      </button>
+      {/* <div onClick={()=>dispatch(signInModalState(true))} className='profile'>
         <p>A</p>
-      </div>
+      </div> */}
     </div>
   )
 }
