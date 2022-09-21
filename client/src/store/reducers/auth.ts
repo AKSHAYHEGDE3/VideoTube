@@ -9,10 +9,13 @@ const authSlice = createSlice({
     reducers:{
         signInModalState:(state,action)=>{
             state.signInModal = action.payload;
-        }
+        },
+        signUpModalState:(state,action)=>{
+            state.signUpModal = action.payload;
+        },
         
     }
 })
 
-export const {signInModalState} = authSlice.actions;
+export const {signInModalState, signUpModalState} = authSlice.actions;
 export default authSlice.reducer;

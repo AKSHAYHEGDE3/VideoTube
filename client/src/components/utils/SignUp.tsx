@@ -1,11 +1,10 @@
 import React from 'react'
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import { Link } from 'react-router-dom';
-import '../styles/auth.scss'
+import '../../styles/auth.scss'
 import { useDispatch, useSelector } from 'react-redux';
-import { signInModalState } from '../store/reducers/auth';
-import { RootState } from '../store';
+import { signInModalState, signUpModalState } from '../../store/reducers/auth';
+import { RootState } from '../../store';
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -19,17 +18,16 @@ const style = {
     p: 4,
 };
 
-const SignIn = () => {
-
+const SignUp = () => {
     const dispatch = useDispatch()
-    const signInModal = useSelector((state:RootState)=>state.auth.signInModal)
+    const signUpModal = useSelector((state: any) => state.auth.signUpModal)
 
     const handleClose = () => {
-        dispatch(signInModalState(false))
+        dispatch(signUpModalState(false))
     }
     return (
         <Modal
-            open={signInModal}
+            open={signUpModal}
             onClose={handleClose}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
@@ -37,7 +35,11 @@ const SignIn = () => {
             <Box sx={style}>
                 <div className="formContainer">
                     <form >
-                        <h2>Sign In</h2>
+                        <h2>Sign Up</h2>
+                        <input type="text" placeholder="name"
+                        // value={email}
+                        // onChange={e => setEmail(e.target.value)}
+                        />
                         <input type="email" placeholder="Email"
                         // value={email}
                         // onChange={e => setEmail(e.target.value)}
@@ -46,9 +48,12 @@ const SignIn = () => {
                         // value={password}
                         // onChange={e => setPassword(e.target.value)}
                         />
-                        <button type="submit" className="loginButton">Sign In</button>
+                        <button type="submit" className="loginButton">Sign Up</button>
                         <span>
-                            New to VideoTube? &nbsp; &nbsp;<b><Link to="/signup">Sign up.</Link></b>
+                            Already Registered? &nbsp; &nbsp;<b><span onClick={() => {
+                                dispatch(signUpModalState(false));
+                                dispatch(signInModalState(true))
+                            }}>Sign In.</span></b>
                         </span>
                     </form>
                     {/* <div className="text-danger mt-4">
@@ -60,4 +65,6 @@ const SignIn = () => {
     )
 }
 
-export default SignIn
+
+
+export default SignUp

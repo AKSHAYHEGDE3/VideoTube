@@ -7,7 +7,8 @@ import VideoPage from './pages/VideoPage';
 import { SideBarContext, SideBarContextInterface } from './SideBarContext';
 import axios from "./api/Youtube"
 import { videoInterface } from './typeUtils'
-import SignIn from './components/SignIn';
+import SignIn from './components/utils/SignIn';
+import SignUp from './components/utils/SignUp';
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <SignIn />
+          <SignUp />
           <div style={{ display: 'flex' }}>
             <div style={showSideBar ? { width: '200px' } : { display: 'none' }}>
               <SideBar />
