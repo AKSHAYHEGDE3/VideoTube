@@ -49,7 +49,7 @@ function App() {
           <SignIn />
           <SignUp />
           <div style={{ display: 'flex' }}>
-            <div style={showSideBar ? { width: '200px' } : { display: 'none' }}>
+            <div style={showSideBar ? { flex:2.2 } : { display: 'none' }}>
               <SideBar />
             </div>
             <div style={
