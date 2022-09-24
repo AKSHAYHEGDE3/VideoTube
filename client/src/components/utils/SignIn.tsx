@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import '../../styles/auth.scss'
@@ -18,10 +18,21 @@ const style = {
     p: 4,
 };
 
+interface signIn{
+    name:string,
+    email:string,
+    password:string
+}
+
 const SignIn = () => {
 
     const dispatch = useDispatch()
     const signInModal = useSelector((state:any)=>state.auth.signInModal)
+    const [data,setData] = useState<signIn>({
+        name:'',
+        email:'',
+        password:''
+    })
 
     const handleClose = () => {
         dispatch(signUpModalState(false))
@@ -37,13 +48,13 @@ const SignIn = () => {
                 <div className="formContainer">
                     <form >
                         <h2>Sign In</h2>
-                        <input type="email" placeholder="Email"
-                        // value={email}
-                        // onChange={e => setEmail(e.target.value)}
+                        <input  type="email" placeholder="Email"
+                        value={data.email}
+                        onChange={e => setData(pre=>({...pre,email:e.target.value}))}
                         />
                         <input type="password" placeholder="Password"
-                        // value={password}
-                        // onChange={e => setPassword(e.target.value)}
+                       value={data.email}
+                       onChange={e => setData(pre=>({...pre,email:e.target.value}))}
                         />
                         <button type="submit" className="loginButton">Sign In</button>
                         <span>
