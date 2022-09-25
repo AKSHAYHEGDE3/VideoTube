@@ -86,3 +86,5 @@ export {
     logout,
     getAllUsers
 };
+
+export default app;

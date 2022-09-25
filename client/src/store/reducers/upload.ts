@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const slice = createSlice({name:"upload",initialState:{
-buttonState:true
+buttonState:false
 }
 
 ,reducers:{
