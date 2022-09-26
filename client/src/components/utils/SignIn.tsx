@@ -1,10 +1,11 @@
-import React,{useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import '../../styles/auth.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { signInModalState, signUpModalState } from '../../store/reducers/auth';
 import { RootState } from '../../store';
+import { signinWithEmailAndPassword, auth } from '../../firebase';
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -18,25 +19,35 @@ const style = {
     p: 4,
 };
 
-interface signIn{
-    name:string,
-    email:string,
-    password:string
+interface signIn {
+    email: string,
+    password: string
 }
 
 const SignIn = () => {
-
     const dispatch = useDispatch()
-    const signInModal = useSelector((state:any)=>state.auth.signInModal)
-    const [data,setData] = useState<signIn>({
-        name:'',
-        email:'',
-        password:''
+    const signInModal = useSelector((state: any) => state.auth.signInModal)
+    const user = useSelector((state: any) => state.auth.user)
+    const [data, setData] = useState<signIn>({
+        email: '',
+        password: ''
     })
 
     const handleClose = () => {
         dispatch(signUpModalState(false))
     }
+
+    const signIn = async (e:any) => {
+        e.preventDefault();
+        await signinWithEmailAndPassword(data.email, data.password)
+    }
+
+    useEffect(() => {
+        if (user) {
+            handleClose();
+        }
+    }, [user])
+
     return (
         <Modal
             open={signInModal}
@@ -46,19 +57,21 @@ const SignIn = () => {
         >
             <Box sx={style}>
                 <div className="formContainer">
-                    <form >
+                    <form onSubmit={(e)=>signIn(e)}>
                         <h2>Sign In</h2>
-                        <input  type="email" placeholder="Email"
-                        value={data.email}
-                        onChange={e => setData(pre=>({...pre,email:e.target.value}))}
+                        <input type="email" placeholder="Email"
+                            value={data.email}
+                            onChange={e => setData(pre => ({ ...pre, email: e.target.value }))}
+                            required
                         />
                         <input type="password" placeholder="Password"
-                       value={data.email}
-                       onChange={e => setData(pre=>({...pre,email:e.target.value}))}
+                            value={data.password}
+                            onChange={e => setData(pre => ({ ...pre, password: e.target.value }))}
+                            required
                         />
                         <button type="submit" className="loginButton">Sign In</button>
                         <span>
-                            New to VideoTube? &nbsp; &nbsp;<b><span onClick={()=>{
+                            New to VideoTube? &nbsp; &nbsp;<b><span onClick={() => {
                                 dispatch(signUpModalState(true));
                                 dispatch(signInModalState(false));
                             }}>Sign up.</span></b>

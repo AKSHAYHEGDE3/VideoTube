@@ -5,6 +5,7 @@ const authSlice = createSlice({
     initialState:{
         signInModal:false,
         signUpModal:false,
+        user:null
     },
     reducers:{
         signInModalState:(state,action)=>{
@@ -13,9 +14,12 @@ const authSlice = createSlice({
         signUpModalState:(state,action)=>{
             state.signUpModal = action.payload;
         },
+        setUser:(state,action)=>{
+            state.user=action.payload;
+        }
         
     }
 })
 
-export const {signInModalState, signUpModalState} = authSlice.actions;
+export const {signInModalState, signUpModalState, setUser} = authSlice.actions;
 export default authSlice.reducer;

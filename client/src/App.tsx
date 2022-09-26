@@ -9,15 +9,32 @@ import axios from "./api/Youtube"
 import { videoInterface } from './typeUtils'
 import SignIn from './components/utils/SignIn';
 import SignUp from './components/utils/SignUp';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { setUser } from './store/reducers/auth';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
 
   const [showSideBar, setShowSideBar] = useState<boolean>(true)
   const [videos, setVideos] = useState<videoInterface[]>([]);
+  const auth = getAuth();
+  const dispatch = useDispatch()
   const side: SideBarContextInterface = {
     showSideBar: showSideBar,
     setShowSideBar: setShowSideBar
   }
+
+  useEffect(() => {
+    const AuthCheck = onAuthStateChanged(auth, (user) => {
+        if (user) {
+            dispatch(setUser({...user}))
+        } else {
+            console.log('unauthorized');
+        }
+    });
+
+    return () => AuthCheck();
+}, [auth]);
 
 
   useEffect(() => {
@@ -39,7 +56,7 @@ function App() {
     })
   }, [])
 
-  console.log(videos)
+  // console.log(videos)
 
   return (
     <div className="App">
