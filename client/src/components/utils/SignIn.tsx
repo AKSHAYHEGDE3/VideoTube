@@ -34,7 +34,7 @@ const SignIn = () => {
     })
 
     const handleClose = () => {
-        dispatch(signUpModalState(false))
+        dispatch(signInModalState(false))
     }
 
     const signIn = async (e:any) => {
